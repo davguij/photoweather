@@ -19,11 +19,12 @@
 
   <body ng-app="Photoweather">
 
-    <ion-pane>
+    <ion-pane ng-controller="WeatherController">
       <ion-header-bar class="bar-stable">
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
       <ion-content>
+      <h3>Lat: {{position.latitude}} / Lon: {{position.longitude}}
       </ion-content>
     </ion-pane>
 
@@ -47,6 +48,8 @@
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/config.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers.js"></script>
+        <script src="scripts/services.js"></script>
         <!-- endbuild -->
 </body>
 </html>
