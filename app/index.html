@@ -7,7 +7,7 @@
     <title>"Photoweather"</title>
 
     <!-- fonts loading -->
-    <script src="//use.edgefonts.net/lato:n1;league-gothic.js"></script>
+    <script src="//use.edgefonts.net/lato:n1,n4;league-gothic.js"></script>
 
     <!-- build:css styles/vendor.css -->
     <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
@@ -23,15 +23,20 @@
 
 <body ng-app="Photoweather">
 
-    <ion-pane>
-        <ion-header-bar class="bar-stable">
+    <ion-content scroll="true">
+        <ion-slide-box>
+            <ion-slide ng-controller="WeatherController">
+                <!-- <ion-header-bar class="bar-stable">
             <h1 class="title">Ionic Blank Starter</h1>
-        </ion-header-bar>
-        <ion-content ng-controller="WeatherController">
-            <canvas currently></canvas>
-            <h3>Lat: {{position.latitude}} / Lon: {{position.longitude}}
-      </ion-content>
-    </ion-pane>
+        </ion-header-bar> -->
+                <canvas currently></canvas>
+                <canvas currently-icon width="128" height="128" class="icon-container"></canvas>
+            </ion-slide>
+            <ion-slide ng-controller="WeatherController">
+                <canvas hourly hours="8"></canvas>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
 
     <!-- build:js scripts/vendor.js -->
     <!-- <script src="vendor/someContribJs.js"></script> -->
@@ -46,16 +51,21 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <!-- build:js scripts/vendor-non-bower.js -->
+    <script src="lib/skycons/skycons.js"></script>
+    <!-- endbuild -->
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
 
-        <!-- build:js scripts/scripts.js -->
-        <script src="scripts/config.js"></script>
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers.js"></script>
-        <script src="scripts/services.js"></script>
-        <script src="scripts/directives.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/directives.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>

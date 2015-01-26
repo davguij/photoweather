@@ -1,1 +1,7 @@
 /* Your application styles go here */
+
+.icon-container {
+    position: absolute;
+    left: 25px;
+    bottom: 145px;
+}
