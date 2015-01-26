@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>"Photoweather"</title>
+
+    <!-- fonts loading -->
+    <script src="//use.edgefonts.net/lato:n1;league-gothic.js"></script>
 
     <!-- build:css styles/vendor.css -->
     <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
@@ -15,16 +19,17 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
+</head>
 
-  <body ng-app="Photoweather">
+<body ng-app="Photoweather">
 
-    <ion-pane ng-controller="WeatherController">
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      <h3>Lat: {{position.latitude}} / Lon: {{position.longitude}}
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Ionic Blank Starter</h1>
+        </ion-header-bar>
+        <ion-content ng-controller="WeatherController">
+            <canvas currently></canvas>
+            <h3>Lat: {{position.latitude}} / Lon: {{position.longitude}}
       </ion-content>
     </ion-pane>
 
@@ -50,6 +55,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers.js"></script>
         <script src="scripts/services.js"></script>
+        <script src="scripts/directives.js"></script>
         <!-- endbuild -->
 </body>
 </html>

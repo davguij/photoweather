@@ -8,10 +8,10 @@ controller('WeatherController', function($scope, $ionicPlatform, weatherServices
                 $scope.position = position.coords;
             });
             weatherServices.weatherCall(position.coords.latitude, position.coords.longitude).then(function(response) {
-            	$scope.forecast = response;
+                $scope.forecast = response;
             })
         }, function(error) {
-        	console.log(error);
+            console.log(error);
         });
     });
 });
