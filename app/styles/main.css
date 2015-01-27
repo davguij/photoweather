@@ -5,3 +5,45 @@
     left: 25px;
     bottom: 145px;
 }
+.deg-20 {
+    background-color: #CD02FA;
+}
+.deg-10 {
+    background-color: #AB06C4;
+}
+.deg0 {
+    background-color: #0400F7;
+}
+.deg10 {
+    background-color: #057BFA;
+}
+.deg20 {
+    background-color: #0AB7C7;
+}
+.deg30 {
+    background-color: #08E4FC;
+}
+.deg40 {
+    background-color: #81FF0A;
+}
+.deg50 {
+    background-color: #D6FA07;
+}
+.deg60 {
+    background-color: #C9860A;
+}
+.deg70 {
+    background-color: #FC9905;
+}
+.deg80 {
+    background-color: #C90A00;
+}
+.deg90 {
+    background-color: #AD0502;
+}
+.deg100 {
+    background-color: #A10402;
+}
+.deg110 {
+    background-color: #B83633;
+}
