@@ -34,7 +34,7 @@ angular.module('Photoweather').
 directive('currentlyIcon', function() {
     return {
         restrict: 'A',
-        link: function(scope, element) {
+        link: function(scope, element, attrs) {
             scope.$watch("forecast", function(newVal, oldVal) {
                 if (newVal) {
                     var skycons = new Skycons({
