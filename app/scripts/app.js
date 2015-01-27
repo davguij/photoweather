@@ -6,6 +6,23 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('Photoweather', ['ionic', 'config'])
 
+.constant("tempObject", {
+    "-20": "#CD02FA",
+    "-10": "#AB06C4",
+    "0": "#0400F7",
+    "10": "#057BFA",
+    "20": "#0AB7C7",
+    "30": "#08E4FC",
+    "40": "#81FF0A",
+    "50": "#D6FA07",
+    "60": "#C9860A",
+    "70": "#FC9905",
+    "80": "#C90A00",
+    "90": "#AD0502",
+    "100": "#A10402",
+    "110": "#B83633"
+})
+
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

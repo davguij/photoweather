@@ -12,7 +12,7 @@ directive('currently', function(auxServices, tempObject) {
             scope.$watch("forecast", function(newVal, oldVal) {
                 if (newVal) {
                     // Color temperature full screen box
-                    ctx.fillStyle = "rgb(" + tempObject[auxServices.roundTo5th(scope.forecast.currently.temperature)] + ")";
+                    ctx.fillStyle = tempObject[auxServices.roundTo10th(scope.forecast.currently.temperature)];
                     ctx.fillRect(0, 0, element[0].clientWidth, element[0].clientHeight);
 
                     // "Currently"
@@ -61,14 +61,17 @@ directive('hourly', function(auxServices, tempObject) {
             scope.$watch("forecast", function(newVal, oldVal) {
                 if (newVal) {
                     // Future color temperature full screen gradient box
-                    var grad = ctx.createLinearGradient(0.000, 150.000, 300.000, 150.000);
 
                     for (var i = attrs.hours - 1; i >= 0; i--) {
-                        grad.addColorStop(i / attrs.hours, "rgb(" + tempObject[auxServices.roundTo5th(scope.forecast.hourly.data[i].temperature)] + ")")
+                        ctx.fillStyle = tempObject[auxServices.roundTo10th(scope.forecast.hourly.data[i].temperature)];
+                        console.log(scope.forecast.hourly.data[i].temperature);
+                        console.log(auxServices.roundTo10th(scope.forecast.hourly.data[i].temperature));
+                        console.log(ctx.fillStyle);
+                        // rayas verticales
+                        // ctx.fillRect((element[0].clientWidth / attrs.hours) * i, 0, element[0].clientWidth / attrs.hours, element[0].clientHeight);
+                        // rayas horizontales
+                        ctx.fillRect(0, ((element[0].clientHeight / attrs.hours) * i), element[0].clientWidth, element[0].clientHeight / attrs.hours);
                     };
-
-                    ctx.fillStyle = grad;
-                    ctx.fillRect(0, 0, element[0].clientWidth, element[0].clientHeight);
 
                     // "Currently"
                     ctx.font = "24px league-gothic";
